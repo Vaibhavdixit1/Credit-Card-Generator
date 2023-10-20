@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="credit-card">
+        <div class="chip"></div>
+        <div class="logo"></div>
+        <div class="card-number" id="cardNumber">1234 5678 9012 3456</div>
+        <div class="card-name" id="cardName">Shyam</div>
+        <div class="valid-up-to" id="validUpTo">Valid : 12/30</div>
+      </div>
+
+      <div class="input-container">
+        <input
+          type="text"
+          class="input-field"
+          id="cardNumberInput"
+          placeholder="Card Number"
+        />
+        <input
+          type="text"
+          class="input-field"
+          id="cardNameInput"
+          placeholder="Cardholder Name"
+        />
+        <input
+          type="text"
+          class="input-field"
+          id="validUpToInput"
+          placeholder="Valid Untill (MM/YY)"
+        />
+      </div>
+      <button class="custom-btn btn" onclick="updateCard()">Update Card</button>
+    </div>
+
+    <script>
+      function updateCard() {
+        const cardNumber = document.getElementById("cardNumberInput").value;
+        const cardName = document.getElementById("cardNameInput").value;
+        const validUpTo = document.getElementById("validUpToInput").value;
+
+        document.getElementById("cardNumber").textContent = cardNumber;
+        document.getElementById("cardName").textContent = cardName;
+        document.getElementById("validUpTo").textContent =
+          "Valid : " + validUpTo;
+      }
+    </script>
+  </body>
+</html>
